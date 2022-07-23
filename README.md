@@ -1,2 +1,2 @@
 # cepapi
-CEP API cloud-computing
+CEP API cloud-computing azure
