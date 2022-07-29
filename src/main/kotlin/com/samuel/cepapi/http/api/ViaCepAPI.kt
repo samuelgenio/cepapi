@@ -1,7 +1,6 @@
-package com.samuel.cepapi.http.retrofit.api
+package com.samuel.cepapi.http.api
 
-import com.samuel.cepapi.http.RetrofitBuilder
-import com.samuel.cepapi.http.handler.response
+import com.samuel.cepapi.http.retrofit.ApiExecutor
 import com.samuel.cepapi.http.retrofit.model.CepResponseDTO
 import com.samuel.cepapi.log.Logger
 import com.samuel.cepapi.log.Logger.Companion.CEP_CONSULT
@@ -15,16 +14,13 @@ import java.util.*
 @RestController
 @RequestMapping("api/cep")
 class ViaCepAPI @Autowired constructor(
-        private val builder: RetrofitBuilder,
+        private val apiExecutor: ApiExecutor,
         private val logger: Logger){
 
     @GetMapping("{cep}")
     @ApiOperation("Busca informações do CEP")
     fun get(@PathVariable("cep") cep: String): CepResponseDTO? {
-        logger.info(CEP_CONSULT.format(cep, Date()))
-        return builder.build<ViaCepService>("https://viacep.com.br/ws/").get(cep)
-            .execute()
-            .response()
+        return cep.also { logger.info(CEP_CONSULT.format(it, Date())) }.let(apiExecutor::execute)
     }
 
 }

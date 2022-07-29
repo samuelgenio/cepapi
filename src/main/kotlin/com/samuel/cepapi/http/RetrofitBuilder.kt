@@ -9,10 +9,10 @@ import java.util.concurrent.TimeUnit
 @Component
 class RetrofitBuilder {
 
-    companion object {
-        const val BASE_URL_VIACEP = "https://viacep.com.br/ws/"
-    }
-
+    /**
+     * use for single provider
+     * @sample retrofitBuilder.build<Provider>(Provider.baseUrl)...
+     */
     final inline fun <reified T> build(baseUrl: String): T {
         val retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
@@ -20,6 +20,14 @@ class RetrofitBuilder {
             .client(okHttpClient())
             .build()
         return retrofit.create(T::class.java)
+    }
+
+    final fun builder(baseUrl: String): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient())
+            .build()
     }
 
     fun okHttpClient() = OkHttpClient.Builder()
