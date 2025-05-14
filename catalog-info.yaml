@@ -2,6 +2,8 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: "cep-api"
+  annotations:
+    github.com/project-slug: 'samuelgenio/cepapi'
 spec:
   type: service
   owner: performance
