@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: "cep-api"
+spec:
+  type: service
+  owner: performance
+  lifecycle: production
