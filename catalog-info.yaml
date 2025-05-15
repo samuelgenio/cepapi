@@ -5,6 +5,11 @@ metadata:
   annotations:
     github.com/project-slug: 'samuelgenio/cepapi'
     backstage.io/techdocs-ref: url:https://github.com/backstage/backstage/tree/master
+  
+  links:
+    - url: https://editor.swagger.io/
+      title: Swagger Editor
+      icon: docs
 
 
 spec:
@@ -12,9 +17,4 @@ spec:
   owner: performance
   lifecycle: production
   consumesApis: [example-grpc-api]
-
-links: 
-  - url: https://editor.swagger.io/
-      title: Swagger
-      icon: dashboard
   
