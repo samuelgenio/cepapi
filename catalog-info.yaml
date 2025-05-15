@@ -11,3 +11,4 @@ spec:
   type: service
   owner: performance
   lifecycle: production
+  consumesApis: [example-grpc-api]
