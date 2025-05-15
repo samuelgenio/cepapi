@@ -12,3 +12,9 @@ spec:
   owner: performance
   lifecycle: production
   consumesApis: [example-grpc-api]
+
+links: 
+  - url: https://editor.swagger.io/
+      title: Swagger
+      icon: dashboard
+  
