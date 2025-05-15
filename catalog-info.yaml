@@ -4,7 +4,7 @@ metadata:
   name: "cep-api"
   annotations:
     github.com/project-slug: 'samuelgenio/cepapi'
-    backstage.io/techdocs-ref: url:https://github.com/aurumsoftware/astreav2/wiki
+    backstage.io/techdocs-ref: dir:.
 
 
 spec:
